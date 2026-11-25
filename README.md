@@ -41,28 +41,27 @@ This project uses the Bike Sharing Dataset, which contains hourly and daily bike
 bike-rental-prediction/
 │
 ├── data/
-│   ├── hour.csv
-│   ├── day.csv
-│   └── Readme.txt
-│
 ├── notebooks/
 │   ├── 01_data_understanding.ipynb
 │   └── 02_exploratory_data_analysis.ipynb
 │
-└── README.md
+├── src/
+├── README.md
+└── requirements.txt
 ```
 
 ## Exploratory Data Analysis
 
-During the EDA process, the following analyses are being performed:
+Completed analyses include:
 
 - Dataset overview and data types
 - Missing value and duplicate checking
 - Numerical feature distributions
 - Categorical feature analysis
 - Correlation analysis
-- Outlier detection
-- Target variable analysis
+- Target variable distribution
+- Hourly rental demand patterns
+- Weather condition vs rental demand analysis
 
 ### Preliminary Findings
 
@@ -72,16 +71,28 @@ During the EDA process, the following analyses are being performed:
 - This pattern may indicate increased bike usage during morning and evening commuting hours.
 - The `hr` feature may help the Machine Learning model capture time-based demand patterns.
 
+**2. Feature Correlation**
+
+- `temp` and `atemp` show a very strong positive correlation (0.99).
+- `temp` has the strongest positive correlation with rental demand among the numeric features.
+- `hum` shows the strongest negative correlation with rental demand.
+
+**3. Weather Impact**
+
+- Rental demand tends to decrease as weather conditions worsen.
+- Clear weather has higher median rental demand than light rain/snow conditions.
+- Heavy rain/snow observations are too limited for reliable conclusions.
+
 *Note: These are preliminary observations from the dataset and may be refined through further analysis.*
 
 ## Current Progress
 
-- [x] Project setup
-- [x] Data understanding
+- [x] Project Setup
+- [x] Data Understanding
 - [x] Exploratory Data Analysis
 - [ ] Feature Engineering
 - [ ] Data Preprocessing
-- [ ] Machine Learning Model Training
+- [ ] Model Training
 - [ ] Model Evaluation
 - [ ] Model Improvement
 - [ ] Model Deployment
@@ -96,7 +107,9 @@ During the EDA process, the following analyses are being performed:
 
 ## Project Status
 
-Currently in the Exploratory Data Analysis stage.
+Data Understanding and Exploratory Data Analysis completed.
+
+Currently preparing for Feature Engineering.
 
 ## Author
 
